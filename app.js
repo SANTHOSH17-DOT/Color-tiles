@@ -158,13 +158,13 @@ const letsPlay = ()=>{
     }
         
         
-        check;
+        
         ts.map(t =>
             t.addEventListener('click',()=>{
-                
+                check();
                 const tileArea = t.style.gridArea;
                 const transTileArea = ttr.style.gridArea;
-                check();
+                
                 //shifting position
                 t.style.gridArea = transTileArea;
                 ttr.style.gridArea= tileArea;
@@ -222,6 +222,7 @@ const letsPlay = ()=>{
                         ts.map(t=>{
                             t.style.cursor = 'auto';
                             t.style.pointerEvents = 'none';
+                            t.style.background = 'transparent';
                         });
                     }
                 
