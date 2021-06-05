@@ -1,4 +1,8 @@
 const letsPlay = ()=>{
+    
+    const ts = Array.from(document.querySelectorAll('.t'));
+    
+
     const startGame = document.querySelector('.start');
     const resetGame = document.querySelector('.stop');
     var time = document.querySelector('.clock');
@@ -6,6 +10,7 @@ const letsPlay = ()=>{
     
     const random_puzzle = ()=>{
         startGame.disabled = false;
+        
         clearInterval(interval);
         time.innerHTML='2:00';
     //Set of colours to be used
@@ -90,6 +95,11 @@ const letsPlay = ()=>{
                 s = 59;
             }
             if(m==0 && s==0){
+                
+                let ts = Array.from(document.querySelectorAll('.t'));
+                ts.map(t=>{t.style.cursor = 'auto';
+                t.style.pointerEvents = 'none';});
+                
                 clearInterval(interval);
 
             }
@@ -127,11 +137,11 @@ const letsPlay = ()=>{
         E4:['E5','E3','D4'],
         E5:['D5','E4']
     }
-    const ts = Array.from(document.querySelectorAll('.t'));
+    
     const ttr = document.querySelector('.ttr');
 
     const unlock = (k)=>{
-        check;
+        
         ts.map(tile=>{
             const y = tile.style.gridArea;
             
@@ -148,12 +158,13 @@ const letsPlay = ()=>{
     }
         
         
-        
+        check;
         ts.map(t =>
             t.addEventListener('click',()=>{
                 
                 const tileArea = t.style.gridArea;
                 const transTileArea = ttr.style.gridArea;
+                check();
                 //shifting position
                 t.style.gridArea = transTileArea;
                 ttr.style.gridArea= tileArea;
@@ -164,76 +175,58 @@ const letsPlay = ()=>{
                 var moves = document.querySelector('.moves');
                 clicks = moves.textContent;
                 moves.textContent = parseInt(clicks)+1;
+                
             })
         );
         
             //recheck this
     //tiles check
-            const check =()=>{
-                let t = document.querySelectorAll('.t');
-                
-                let t22;
-                let t23;
-                let t24;
-                let t32;
-                let t33;
-                let t34;
-                let t42;
-                let t43;
-                let t44;
-
-                let i;
-                for(i=0;i<t.length();i++){
-                    if(t[i].style.gridArea == 'B2'){
-                        t22 = t[i];
-                    }else if(t[i].style.gridArea =='B3'){
-                        t23 = t[i];
-                    }else if(t[i].style.gridArea =='B4'){
-                        t24 = t[i];
-                    }else if(t[i].style.gridArea =='C2'){
-                        t32 = t[i];
-                    }else if(t[i].style.gridArea =='C3'){
-                        t33 = t[i];
-                    }else if(t[i].style.gridArea =='C4'){
-                        t34 = t[i];
-                    }else if(t[i].style.gridArea =='D2'){
-                        t42 = t[i];
-                    }else if(t[i].style.gridArea =='D3'){
-                        t43 = t[i];
-                    }else if(t[i].style.gridArea =='D4'){
-                        t44 = t[i];
+            const check = ()=>{
+                console.log('yes');
+                let s = Array.from(document.querySelectorAll('.s'));
+                let t22;let t23; let t24; let t32; let t33; let t34; let t42; let t43;let t44;
+                ts.map(t=>{
+                    if(t.style.gridArea.slice(0,2) == 'B2'){
+                        t22 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='B3'){
+                        t23 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='B4'){
+                        t24 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='C2'){
+                        t32 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='C3'){
+                        t33 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='C4'){
+                        t34 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='D2'){
+                        t42 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='D3'){
+                        t43 = t.style.background;
+                    }else if(t.style.gridArea.slice(0,2)=='D4'){
+                        t44 = t.style.background;
                     }
-                }
-                const s11 = document.querySelector('.s11');
-                const s12 = document.querySelector('.s12');
-                const s13 = document.querySelector('.s13');
-                const s21 = document.querySelector('.s21');
-                const s22 = document.querySelector('.s22');
-                const s23 = document.querySelector('.s23');
-                const s31 = document.querySelector('.s31');
-                const s32 = document.querySelector('.s32');
-                const s33 = document.querySelector('.s33');
-                
-                if(t22.style.background == s11.style.background &&
-                    t23.style.background == s12.style.background &&
-                    t24.style.background == s13.style.background &&
-                    t32.style.background == s21.style.background &&
-                    t33.style.background == s22.style.background &&
-                    t34.style.background == s23.style.background &&
-                    t42.style.background == s31.style.background &&
-                    t43.style.background == s32.style.background &&
-                    t44.style.background == s33.style.background
-                    ){  
+                });
+                if(s[0].style.background == t22 &&
+                    s[1].style.background == t23 &&
+                    s[2].style.background == t24 &&
+                    s[3].style.background == t32 &&
+                    s[4].style.background == t33 &&
+                    s[5].style.background == t34 &&
+                    s[6].style.background == t42 &&
+                    s[7].style.background == t43 &&
+                    s[8].style.background == t44 
+                    ){
+                        console.log('yes');
                         clearInterval(interval);
-                        let t = document.querySelectorAll('.t');
-                        t.style.pointerEvents ="none";
-                        t.style.cursor = 'auto';
-                        return true;
-
-                    }else{
-                        return false;
+                        let ts = Array.from(document.querySelectorAll('.t'));
+                        ts.map(t=>{
+                            t.style.cursor = 'auto';
+                            t.style.pointerEvents = 'none';
+                        });
                     }
+                
             }
+            
     }
 
     letsPlay();
