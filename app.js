@@ -10,6 +10,8 @@ const letsPlay = ()=>{
     
     const random_puzzle = ()=>{
         startGame.disabled = false;
+        let Congrats = document.querySelector('.sol_back');
+        Congrats.style.color = 'transparent';
         
         clearInterval(interval);
         time.innerHTML='2:00';
@@ -98,9 +100,12 @@ const letsPlay = ()=>{
                 
                 let ts = Array.from(document.querySelectorAll('.t'));
                 ts.map(t=>{t.style.cursor = 'auto';
-                t.style.pointerEvents = 'none';});
+                t.style.pointerEvents = 'none';
+                });
+                
                 
                 clearInterval(interval);
+                
 
             }
             time.innerHTML = m+':'+s;
@@ -179,7 +184,7 @@ const letsPlay = ()=>{
             })
         );
         
-            //recheck this
+
     //tiles check
             const check = ()=>{
                 console.log('yes');
@@ -219,10 +224,15 @@ const letsPlay = ()=>{
                         console.log('yes');
                         clearInterval(interval);
                         let ts = Array.from(document.querySelectorAll('.t'));
+                        let Congrats = document.querySelector('.sol_back');
                         ts.map(t=>{
                             t.style.cursor = 'auto';
                             t.style.pointerEvents = 'none';
                             t.style.background = 'transparent';
+                            Congrats.style.color = 'black';
+                            
+                            
+
                         });
                     }
                 

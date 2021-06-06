@@ -167,4 +167,9 @@ header {
 }
 .sol_back {
   background-color: rgba(94, 88, 88, 0.418);
+  color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
 }
