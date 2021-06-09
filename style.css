@@ -107,43 +107,7 @@ td {
 .hard {
   display: none;
 }
-/*responsive*/
-@media only screen and (max-width: 321px) {
-  .intro > header {
-    font-size: 30px;
-    position: relative;
-    top: 0;
-  }
-  .mode {
-    margin: 0;
-  }
-  .mode > button {
-    font: 16px;
-  }
-  .playerList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .highScore {
-    width: 90vw;
-  }
-  th,
-  td {
-    padding: 7px;
-  }
-  .escores,
-  .mscores,
-  .hscores {
-    width: 250px;
-  }
-  .estart,
-  .mstart,
-  .hstart {
-    width: 100px;
-    padding: 4px 5px;
-  }
-}
+
 /*easy mode*/
 .easy {
   height: 100vh;
@@ -256,7 +220,6 @@ td {
     "eC1 eC2 eC3 eC4"
     "eD1 eD2 eD3 eD4";
   grid-gap: 2px;
-  grid-gap: 2px;
   height: 320px;
   width: 315px;
   background: rgb(187, 183, 183);
@@ -275,8 +238,8 @@ td {
   opacity: 0;
 
   cursor: auto;
-  height: 58px;
-  width: 58px;
+  height: 75px;
+  width: 75px;
 }
 .esol_back {
   background-color: rgba(94, 88, 88, 0.418);
@@ -320,6 +283,7 @@ td {
   flex-direction: row;
   width: 40vw;
   max-width: 500px;
+  min-width: 250px;
   justify-content: space-between;
   align-items: center;
 }
@@ -570,4 +534,74 @@ td {
   flex-direction: column;
   justify-content: center;
   user-select: none;
+}
+/*responsive*/
+@media only screen and (max-width: 321px) {
+  .intro > header {
+    font-size: 30px;
+    position: relative;
+    top: 0;
+  }
+  header {
+    font-size: 30px;
+    position: relative;
+    top: 0;
+  }
+  .mode {
+    margin: 0;
+  }
+  .mode > button {
+    font: 16px;
+  }
+  .playerList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .highScore {
+    width: 90vw;
+  }
+  th,
+  td {
+    padding: 7px;
+  }
+  .escores,
+  .mscores,
+  .hscores {
+    width: 250px;
+  }
+  .estart {
+    width: 100px;
+    padding: 4px;
+  }
+  .emodes {
+    width: 100px;
+    padding: 4px;
+  }
+  .mstart {
+    width: 100px;
+    padding: 4px;
+  }
+  .mmodes {
+    width: 100px;
+    padding: 4px;
+  }
+  .ematch,
+  .mmatch,
+  .hmatch {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .egoal,
+  .mgoal,
+  .hgoal {
+    margin: 2px;
+  }
+
+  .epuzzle,
+  .mpuzzle,
+  .hpuzzle {
+    margin: 2px;
+  }
 }
