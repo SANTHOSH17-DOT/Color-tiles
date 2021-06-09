@@ -1,6 +1,5 @@
 const hardBtn = document.querySelector('#hard');
-localStorage.hname = 'rocket';
-localStorage.hmoves = 200;
+
 
 const hrandom_puzzle=()=>{
     let Congrats = document.querySelector('.hsol_back');
@@ -244,14 +243,14 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                         
 
                     });
-                    let score = localStorage.getItem('moves');
+                    let score = localStorage.getItem('hmoves');
                     let hmoves = document.querySelector('.hmoves');
                     let hname = document.querySelector('#name');
                     console.log(hname.value);
                     console.log(hname.value !="");
                     if(hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
-                        localStorage.setItem('name',hname.value);
-                        localStorage.setItem('moves',hmoves.textContent);
+                        localStorage.setItem('hname',hname.value);
+                        localStorage.setItem('hmoves',hmoves.textContent);
                         
                         
                     }

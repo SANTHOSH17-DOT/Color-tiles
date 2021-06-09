@@ -1,6 +1,5 @@
 const medBtn = document.querySelector('#medium');
-localStorage.mname = 'drax';
-localStorage.mmoves = 100;
+
 
 const mrandom_puzzle=()=>{
     let Congrats = document.querySelector('.msol_back');
@@ -211,14 +210,14 @@ const mts = Array.from(document.querySelectorAll('.mt'));
                         
 
                     });
-                    let score = localStorage.getItem('moves');
+                    let score = localStorage.getItem('mmoves');
                     let mmoves = document.querySelector('.mmoves');
                     let mname = document.querySelector('#name');
                     console.log(mname.value);
                     console.log(mname.value !="");
                     if(mname.value != "" && parseInt(mmoves.textContent)<parseInt(score)){
-                        localStorage.setItem('name',mname.value);
-                        localStorage.setItem('moves',mmoves.textContent);
+                        localStorage.setItem('mname',mname.value);
+                        localStorage.setItem('mmoves',mmoves.textContent);
                         
                         
                     }
