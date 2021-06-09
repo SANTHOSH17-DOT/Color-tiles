@@ -253,7 +253,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                     let hname = document.querySelector('#name');
                     console.log(hname.value);
                     console.log(hname.value !="");
-                    if(score || hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
+                    if(!score || hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
                         localStorage.setItem('hname',hname.value);
                         localStorage.setItem('hmoves',hmoves.textContent);
                         
