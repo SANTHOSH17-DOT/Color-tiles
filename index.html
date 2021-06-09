@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour tiles</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="game">
+        <div class="intro">
+            
+            <header>Colour Tiles</header>
+            
+            <div class='name'>
+                <form>
+                    <label for="name" id="enterName">Enter your name:</label>
+                    <input type="text" id="name" name="userName">
+                </form>
+            </div>
+            <div class='mode'>
+                <button id="easy">Easy mode</button>
+                <button id="medium">Medium mode</button>
+                <button id="hard">Hard mode</button>
+            </div>
+            <div class="highScore">
+                <h2>Best Players</h2>
+                <p>Enter your name to get into leaderboard</p>
+                <div class="playerList">
+                <div>
+                <table style='color:rgb(48, 120, 230);'>
+                    <tr><th>Name(Easy)</th><th>Score</th></tr>
+                    <tr><td id="easyP"></td><td  id="easyS"></td></tr>
+                </table>
+                </div>
+                <div>
+                <table style="color: silver;">
+                    <tr><th>Name(Medium)</th><th>Score</th></tr>
+                    <tr><td id="medP"></td><td id="medS"></td></tr>
+                </table>
+                </div>
+                <div>
+                <table style="color: gold;">
+                    <tr><th>Name(Difficult)</th><th>Score</th></tr>
+                    <tr><td id="hardP"></td><td id="hardS"></td></tr>
+                </table>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="easy">
+            <header>Colour Tiles</header>
+            <div class="escores">
+                <div class="escore">
+                    <h1>Moves</h1>
+                    <p class='emoves'>0</p>
+                </div>
+                <div class="etime">
+                    <h1>Time left</h1>
+                    <p class="eclock">1:00</p>
+                </div>
+            </div>
+            <div class="ematch">
+                <!--reference-->
+                <div class="egoal">
+                    <div class='es es11'></div>
+                    <div class='es es12'></div>
+                    <div class='es es21'></div>
+                    <div class='es es22'></div>
+                </div>
+                <!--puzzle-->
+                <div class="epuzzle">
+                    <div class="esol_back" style="grid-area:eB2/eB2/eC3/eC3;"><h1 class="Congrats">Congrats!!!</h1><p>Click <b>Modes</b> for another puzzle</b> 🔥</p></div>
+                    <div class="et et11" style="grid-area:eA1;"></div>
+                    <div class="et et12" style="grid-area:eA2;"></div>
+                    <div class="et et13" style="grid-area:eA3;"></div>
+                    <div class="et et14" style="grid-area:eA4;"></div>
+                    <div class="et et21" style="grid-area:eB1;"></div>
+                    <div class="et et22" style="grid-area:eB2;"></div>
+                    <div class="et et23" style="grid-area:eB3;"></div>
+                    <div class="et et24" style="grid-area:eB4"></div>
+                    <div class="et et31" style="grid-area:eC1;"></div>
+                    <div class="et et32" style="grid-area:eC2"></div>
+                    <div class="et et33" style="grid-area:eC3;"></div>
+                    <div class="et et34" style="grid-area:eC4;"></div>
+                    <div class="et et41" style="grid-area:eD1;"></div>
+                    <div class="et et42" style="grid-area:eD2;"></div>
+                    <div class="et et43" style="grid-area:eD3;"></div>
+                    <div class="et ettr" style="grid-area:eD4;"></div>
+                </div>
+            </div>
+                <!--Buttons-->
+                
+            <div class="egame-start" >
+                <button class="estart" disabled>Start Game</button>
+                <button class="emodes">Modes</button>
+            </div>
+            
+        </div>
+        <div class="medium">
+            <header>Colour Tiles</header>
+            <div class="mscores">
+                <div class="mscore">
+                    <h1>Moves</h1>
+                    <p class='mmoves'>0</p>
+                </div>
+                <div class="mtime">
+                    <h1>Time left</h1>
+                    <p class="mclock">2:00</p>
+                </div>
+            </div>
+            <div class="mmatch">
+                <!--reference-->
+                <div class="mgoal">
+                    <div class='ms ms11'></div>
+                    <div class='ms ms12'></div>
+                    <div class='ms ms13'></div>
+                    <div class='ms ms21'></div>
+                    <div class='ms ms22'></div>
+                    <div class='ms ms23'></div>
+                    <div class='ms ms31'></div>
+                    <div class='ms ms32'></div>
+                    <div class='ms ms33'></div>
+                </div>
+                <!--puzzle-->
+                <div class="mpuzzle">
+                    <div class="msol_back" style="grid-area:mB2/mB2/mD4/mD4;"><h1 class="Congrats">Congrats!!!</h1><p>Click <b>Modes</b> for another puzzle</b> 🔥</p></div>
+                <div class="mt mt11" style="grid-area:mA1;"></div>
+                <div class="mt mt12" style="grid-area:mA2;"></div>
+                <div class="mt mt13" style="grid-area:mA3;"></div>
+                <div class="mt mt14" style="grid-area:mA4;"></div>
+                <div class="mt mt15" style="grid-area:mA5;"></div>
+                <div class="mt mt21" style="grid-area:mB1;"></div>
+                <div class="mt mt22" style="grid-area:mB2;"></div>
+                <div class="mt mt23" style="grid-area:mB3"></div>
+                <div class="mt mt24" style="grid-area:mB4;"></div>
+                <div class="mt mt25" style="grid-area:mB5"></div>
+                <div class="mt mt31" style="grid-area:mC1;"></div>
+                <div class="mt mt32" style="grid-area:mC2;"></div>
+                <div class="mt mt33" style="grid-area:mC3;"></div>
+                <div class="mt mt34" style="grid-area:mC4;"></div>
+                <div class="mt mt35" style="grid-area:mC5;"></div>
+                <div class="mt mt41" style="grid-area:mD1;"></div>
+                <div class="mt mt42" style="grid-area:mD2;"></div>
+                <div class="mt mt43" style="grid-area:mD3;"></div>
+                <div class="mt mt44" style="grid-area:mD4;"></div>
+                <div class="mt mt45" style="grid-area:mD5;"></div>
+                <div class="mt mt51" style="grid-area:mE1;"></div>
+                <div class="mt mt52" style="grid-area:mE2;"></div>
+                <div class="mt mt53" style="grid-area:mE3;"></div>
+                <div class="mt mt54" style="grid-area:mE4;"></div>
+                <div class="mt mttr" style="grid-area:mE5;"></div>
+
+                </div>
+            </div>
+                <!--Buttons-->
+                
+            <div class="mgame-start" >
+                <button class="mstart" disabled>Start Game</button>
+                <button class="mmodes">Modes</button>
+            </div>
+        </div>
+        <div class="hard">
+            <header>Colour Tiles</header>
+            <div class="hscores">
+                <div class="hscore">
+                    <h1>Moves</h1>
+                    <p class='hmoves'>0</p>
+                </div>
+                <div class="htime">
+                    <h1>Time left</h1>
+                    <p class="hclock">4:00</p>
+                </div>
+            </div>
+            <div class="hmatch">
+                <!--reference-->
+                <div class="hgoal">
+                    <div class='hs hs11'></div>
+                    <div class='hs hs12'></div>
+                    <div class='hs hs13'></div>
+                    <div class='hs hs14'></div>
+                    <div class='hs hs21'></div>
+                    <div class='hs hs22'></div>
+                    <div class='hs hs23'></div>
+                    <div class='hs hs24'></div>
+                    <div class='hs hs31'></div>
+                    <div class='hs hs32'></div>
+                    <div class='hs hs33'></div>
+                    <div class='hs hs34'></div>
+                    <div class='hs hs41'></div>
+                    <div class='hs hs42'></div>
+                    <div class='hs hs43'></div>
+                    <div class='hs hs44'></div>
+                </div>
+                <!--puzzle-->
+                <div class="hpuzzle">
+                    <div class="hsol_back" style="grid-area:hB2/hB2/hE5/hE5;"><h1 class="Congrats">Congrats!!!</h1><p>Click <b>Modes</b> for another puzzle</b> 🔥</p></div>
+                <div class="ht ht11" style="grid-area:hA1;"></div>
+                <div class="ht ht12" style="grid-area:hA2;"></div>
+                <div class="ht ht13" style="grid-area:hA3;"></div>
+                <div class="ht ht14" style="grid-area:hA4;"></div>
+                <div class="ht ht15" style="grid-area:hA5;"></div>
+                <div class="ht ht16" style="grid-area:hA6;"></div>
+                <div class="ht ht21" style="grid-area:hB1;"></div>
+                <div class="ht ht22" style="grid-area:hB2;"></div>
+                <div class="ht ht23" style="grid-area:hB3;"></div>
+                <div class="ht ht24" style="grid-area:hB4;"></div>
+                <div class="ht ht25" style="grid-area:hB5;"></div>
+                <div class="ht ht26" style="grid-area:hB6;"></div>
+                <div class="ht ht31" style="grid-area:hC1;"></div>
+                <div class="ht ht32" style="grid-area:hC2;"></div>
+                <div class="ht ht33" style="grid-area:hC3;"></div>
+                <div class="ht ht34" style="grid-area:hC4;"></div>
+                <div class="ht ht35" style="grid-area:hC5;"></div>
+                <div class="ht ht36" style="grid-area:hC6;"></div>
+                <div class="ht ht41" style="grid-area:hD1;"></div>
+                <div class="ht ht42" style="grid-area:hD2;"></div>
+                <div class="ht ht43" style="grid-area:hD3;"></div>
+                <div class="ht ht44" style="grid-area:hD4;"></div>
+                <div class="ht ht45" style="grid-area:hD5;"></div>
+                <div class="ht ht46" style="grid-area:hD6;"></div>
+                <div class="ht ht51" style="grid-area:hE1;"></div>
+                <div class="ht ht52" style="grid-area:hE2;"></div>
+                <div class="ht ht53" style="grid-area:hE3;"></div>
+                <div class="ht ht54" style="grid-area:hE4;"></div>
+                <div class="ht ht55" style="grid-area:hE5;"></div>
+                <div class="ht ht56" style="grid-area:hE6;"></div>
+                <div class="ht ht61" style="grid-area:hF1;"></div>
+                <div class="ht ht62" style="grid-area:hF2;"></div>
+                <div class="ht ht63" style="grid-area:hF3;"></div>
+                <div class="ht ht64" style="grid-area:hF4;"></div>
+                <div class="ht ht65" style="grid-area:hF5;"></div>
+                <div class="ht httr" style="grid-area:hF6;"></div>
+                
+
+                </div>
+            </div>
+                <!--Buttons-->
+                
+            <div class="hgame-start" >
+                <button class="hstart" disabled>Start Game</button>
+                <button class="hmodes">Modes</button>
+            </div>
+        </div>
+    </section>
+    <script src="app1.js"></script>
+    <script src="app2.js"></script>
+    <script src="app3.js"></script>
+</body>
+</html>
