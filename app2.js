@@ -1,5 +1,8 @@
 const medBtn = document.querySelector('#medium');
-
+var tileSound = new sound("tilesound.wav");
+var mediumopen = new sound("mediumopen.wav");
+var applause = new sound("applause.wav");
+var gameover = new sound("gameover.wav");
 
 const mrandom_puzzle=()=>{
     let Congrats = document.querySelector('.msol_back');
@@ -52,6 +55,7 @@ medBtn.addEventListener('click',function(){
     introPage.style.display = 'none';
     medPage.style.display = 'flex';
     mstartGame.disabled=false;
+    mediumopen.play();
     mrandom_puzzle();
 });
 const mts = Array.from(document.querySelectorAll('.mt'));
@@ -89,7 +93,7 @@ const mts = Array.from(document.querySelectorAll('.mt'));
                         mts.map(t=>{t.style.cursor = 'auto';
                         t.style.pointerEvents = 'none';
                         });
-                            
+                            gameover.play();
                             
                         clearInterval(interval);
                             }
@@ -153,7 +157,7 @@ const mts = Array.from(document.querySelectorAll('.mt'));
                 t.style.gridArea = transTileArea;
                 mttr.style.gridArea= tileArea;
                 munlock(mttr.style.gridArea);
-                
+                tileSound.play();
     
                 //score increment
                 var mmoves = document.querySelector('.mmoves');
@@ -206,7 +210,8 @@ const mts = Array.from(document.querySelectorAll('.mt'));
                         t.style.pointerEvents = 'none';
                         t.style.background = 'transparent';
                         Congrats.style.color = 'black';
-                        
+                        tileSound.stop();
+                        applause.play();
                         
 
                     });
@@ -215,7 +220,7 @@ const mts = Array.from(document.querySelectorAll('.mt'));
                     let mname = document.querySelector('#name');
                     console.log(mname.value);
                     console.log(mname.value !="");
-                    if(mname.value != "" && parseInt(mmoves.textContent)<parseInt(score)){
+                    if(score || mname.value != "" && parseInt(mmoves.textContent)<parseInt(score)){
                         localStorage.setItem('mname',mname.value);
                         localStorage.setItem('mmoves',mmoves.textContent);
                         
@@ -242,6 +247,8 @@ mmode.addEventListener('click',function(){
         t.style.cursor = 'auto';
         t.style.pointerEvents = 'none';
     });
+    applause.stop();
+    gameover.stop();
     introPage.style.display = 'flex';
     medPage.style.display = 'none';
 });

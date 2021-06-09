@@ -1,7 +1,8 @@
 const easyBtn = document.querySelector('#easy');
-
-
-
+var tileSound = new sound("tilesound.wav");
+var easyopen = new sound("easyopen.wav");
+var applause = new sound("applause.wav");
+var gameover = new sound("gameover.wav");
 
 //easy mode
 const erandom_puzzle=()=>{
@@ -55,6 +56,7 @@ easyBtn.addEventListener('click',function(){
     introPage.style.display = 'none';
     easyPage.style.display = 'flex';
     estartGame.disabled=false;
+    easyopen.play();
     erandom_puzzle();
 });
 
@@ -67,7 +69,8 @@ easyBtn.addEventListener('click',function(){
             emoves.textContent = 0;
             clearInterval(interval);
             etime.innerHTML='1:00';
-        
+            
+            
             let transTile = document.querySelector('.ettr');
             etimeLeft();
             eunlock(transTile.style.gridArea);
@@ -92,7 +95,7 @@ easyBtn.addEventListener('click',function(){
                         ets.map(t=>{t.style.cursor = 'auto';
                         t.style.pointerEvents = 'none';
                         });
-                            
+                            gameover.play();
                             
                         clearInterval(interval);
                             }
@@ -149,6 +152,7 @@ easyBtn.addEventListener('click',function(){
             ettr.style.gridArea= tileArea;
             eunlock(ettr.style.gridArea);
             
+            tileSound.play();
 
             //score increment
             var emoves = document.querySelector('.emoves');
@@ -185,6 +189,7 @@ easyBtn.addEventListener('click',function(){
                     t.style.pointerEvents = 'none';
                     t.style.background = 'transparent';
                     Congrats.style.color = 'black';
+                    applause.play();
                 });
                 
                     
@@ -194,7 +199,7 @@ easyBtn.addEventListener('click',function(){
                     let ename = document.querySelector('#name');
                     console.log(ename.value);
                     console.log(ename.value !="");
-                    if(ename.value != "" && parseInt(emoves.textContent)<parseInt(score)){
+                    if(!score || ename.value != "" && parseInt(emoves.textContent)<parseInt(score)){
                         console.log('a;faj');
                         localStorage.setItem('ename',ename.value);
                         localStorage.setItem('emoves',emoves.textContent);
@@ -226,9 +231,24 @@ emode.addEventListener('click',function(){
         t.style.cursor = 'auto';
         t.style.pointerEvents = 'none';
     });
-
+    applause.stop();
+    gameover.stop();
     introPage.style.display = 'flex';
     easyPage.style.display = 'none';
 });
 
-
+function sound(src){
+    this.sound = document.createElement('audio');
+    
+    this.sound.src = src;
+    this.sound.setAttribute('preload','auto');
+    this.sound.setAttribute('controls','none');
+    this.sound.style.display = 'none';
+    document.body.appendChild(this.sound);
+    this.play= function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}

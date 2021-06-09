@@ -1,5 +1,8 @@
 const hardBtn = document.querySelector('#hard');
-
+var tileSound = new sound("tilesound.wav");
+var hardopen = new sound("hardopen.wav");
+var applause = new sound("applause.wav");
+var gameover = new sound("gameover.wav");
 
 const hrandom_puzzle=()=>{
     let Congrats = document.querySelector('.hsol_back');
@@ -52,6 +55,7 @@ hardBtn.addEventListener('click',function(){
     introPage.style.display = 'none';
     hardPage.style.display = 'flex';
     hstartGame.disabled=false;
+    hardopen.play();
     hrandom_puzzle();
 });
 const hts = Array.from(document.querySelectorAll('.ht'));
@@ -90,7 +94,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                         hts.map(t=>{t.style.cursor = 'auto';
                         t.style.pointerEvents = 'none';
                         });
-                            
+                            gameover.play();
                             
                         clearInterval(interval);
                             }
@@ -165,7 +169,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                 t.style.gridArea = transTileArea;
                 httr.style.gridArea= tileArea;
                 hunlock(httr.style.gridArea);
-                
+                tileSound.play();
     
                 //score increment
                 var hmoves = document.querySelector('.hmoves');
@@ -239,7 +243,8 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                         t.style.pointerEvents = 'none';
                         t.style.background = 'transparent';
                         Congrats.style.color = 'black';
-                        
+                        tileSound.stop();
+                        applause.play();
                         
 
                     });
@@ -248,7 +253,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                     let hname = document.querySelector('#name');
                     console.log(hname.value);
                     console.log(hname.value !="");
-                    if(hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
+                    if(score || hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
                         localStorage.setItem('hname',hname.value);
                         localStorage.setItem('hmoves',hmoves.textContent);
                         
@@ -274,6 +279,8 @@ hmode.addEventListener('click',function(){
         t.style.cursor = 'auto';
         t.style.pointerEvents = 'none';
     });
+    applause.stop();
+    gameover.stop();
     introPage.style.display = 'flex';
     hardPage.style.display = 'none';
 });
