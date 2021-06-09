@@ -1,5 +1,6 @@
 const medBtn = document.querySelector('#medium');
-
+localStorage.mname = 'drax';
+localStorage.mmoves = 100;
 
 const mrandom_puzzle=()=>{
     let Congrats = document.querySelector('.msol_back');

@@ -1,5 +1,6 @@
 const hardBtn = document.querySelector('#hard');
-
+localStorage.hname = 'rocket';
+localStorage.hmoves = 200;
 
 const hrandom_puzzle=()=>{
     let Congrats = document.querySelector('.hsol_back');

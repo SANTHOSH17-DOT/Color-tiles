@@ -1,5 +1,6 @@
 const easyBtn = document.querySelector('#easy');
-
+localStorage.ename = 'groot';
+localStorage.emoves = 50;
 
 
 
