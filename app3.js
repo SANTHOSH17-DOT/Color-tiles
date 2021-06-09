@@ -126,7 +126,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                     hD2:['hC2','hD1','hD3','hE2'],
                     hD3:['hC3','hD2','hE3','hD4'],
                     hD4:['hD5','hD3','hC4','hE4'],
-                    hD5:['hE5','hD4','hC5','HD6'],
+                    hD5:['hE5','hD4','hC5','hD6'],
                     hD6:['hC6','hE6','hD5'],
                     hE1:['hF1','hE2','hD1'],
                     hE2:['hD2','hE1','hE3','hF2'],
