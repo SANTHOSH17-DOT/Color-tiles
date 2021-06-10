@@ -536,7 +536,7 @@ td {
   user-select: none;
 }
 /*responsive*/
-@media only screen and (max-width: 321px) {
+@media only screen and (max-width: 376px) {
   .intro > header {
     font-size: 30px;
     position: relative;
