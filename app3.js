@@ -138,7 +138,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                     hF2:['hE2','hF1','hF3'],
                     hF3:['hF4','hF2','hE3'],
                     hF4:['hF5','hF3','hE4'],
-                    hF5:['hE5','hF4','HF6'],
+                    hF5:['hE5','hF4','hF6'],
                     hF6:['hF5','hE6']
                 }
                 const httr = document.querySelector('.httr');
@@ -253,7 +253,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
                     let hname = document.querySelector('#name');
                     console.log(hname.value);
                     console.log(hname.value !="");
-                    if(!score || hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
+                    if(hname.value!="" && !score || hname.value != "" && parseInt(hmoves.textContent)<parseInt(score)){
                         localStorage.setItem('hname',hname.value);
                         localStorage.setItem('hmoves',hmoves.textContent);
                         

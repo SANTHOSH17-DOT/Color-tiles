@@ -220,7 +220,7 @@ const mts = Array.from(document.querySelectorAll('.mt'));
                     let mname = document.querySelector('#name');
                     console.log(mname.value);
                     console.log(mname.value !="");
-                    if(!score || mname.value != "" && parseInt(mmoves.textContent)<parseInt(score)){
+                    if(mname.value!="" && !score || mname.value != "" && parseInt(mmoves.textContent)<parseInt(score)){
                         localStorage.setItem('mname',mname.value);
                         localStorage.setItem('mmoves',mmoves.textContent);
                         

@@ -199,7 +199,7 @@ easyBtn.addEventListener('click',function(){
                     let ename = document.querySelector('#name');
                     console.log(ename.value);
                     console.log(ename.value !="");
-                    if(!score || ename.value != "" && parseInt(emoves.textContent)<parseInt(score)){
+                    if(ename.value!="" && !score || ename.value != "" && parseInt(emoves.textContent)<parseInt(score)){
                         console.log('a;faj');
                         localStorage.setItem('ename',ename.value);
                         localStorage.setItem('emoves',emoves.textContent);
