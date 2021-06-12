@@ -6,14 +6,408 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colour tiles</title>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="game">
-        <div class="intro">
+        <!--Choosing player mode-->
+        <div class="gameChoice">
+            <header>Colour Tiles</header>
+            <div class="multiSingle">
+                <button id="sPlayer">Single player</button>
+                <button id="mPlayer">Multiplayer </button>
+            </div>
+        </div>
+        <!--Multiplayer game-->
+        <div class="introm">
+            <header>Colour Tiles</header>
+            <p>Multiplayer mode</p>
+            <div class="nameM">
+                <form>
+                    <label for='name1' id='enterName1'>Enter player1 name:</label>
+                    <input type="text" id="name1" name="userName1">
+                    <br/>
+                    <br/>
+                    <label for='name2' id='enterName2'>Enter player2 name:</label>
+                    <input type="text" id="name2" name="userName2">
+                </form>
+            </div>
+            <div class='modeM'>
+                <button id="easyM">Easy mode</button>
+                <button id="mediumM">Medium mode</button>
+                <button id="hardM">Hard mode</button>
+                <button id="mplayerMode">Player mode</button>
+            </div>
+            <div class="highScoreM">
+                <h2>Best Players</h2>
+                <p>Enter your name to get into leaderboard</p>
+                <div class="playerListM">
+                <div>
+                <table style='color:rgb(48, 120, 230);'>
+                    <tr><th>Name(Easy)</th><th>Score</th></tr>
+                    <tr><td id="easyPM"></td><td  id="easySM"></td></tr>
+                </table>
+                </div>
+                <div>
+                <table style="color: silver;">
+                    <tr><th>Name(Medium)</th><th>Score</th></tr>
+                    <tr><td id="medPM"></td><td id="medSM"></td></tr>
+                </table>
+                </div>
+                <div>
+                <table style="color: gold;">
+                    <tr><th>Name(Difficult)</th><th>Score</th></tr>
+                    <tr><td id="hardPM"></td><td id="hardSM"></td></tr>
+                </table>
+                </div>
+                </div>
+            </div>
+        </div>
+            <!--multiplayer easy mode-->
+            <div class="easyM" >
+                <header>Colour Tiles</header>
+                
+                <div class="ematchM">
+                    
+                    <!--puzzle-->
+                    <!--player1 puzzle-->
+                    <div class="eP1puzz">
+                        <div class="P1escores">
+                            <div class="P1escore">
+                                <h1>Moves</h1>
+                                <p class='P1emoves'>0</p>
+                            </div>
+                            <div class="P1etime">
+                                <h1>Time left</h1>
+                                <p class="P1eclock">1:00</p>
+                            </div>
+                        </div>
+                        <div class="P1epuzzle">
+                            <div class="P1esol_back" style="grid-area:P1eB2/P1eB2/P1eC3/P1eC3;"></div>
+                            <div class="P1et P1et11" style="grid-area:P1eA1;"></div>
+                            <div class="P1et P1et12" style="grid-area:P1eA2;"></div>
+                            <div class="P1et P1et13" style="grid-area:P1eA3;"></div>
+                            <div class="P1et P1et14" style="grid-area:P1eA4;"></div>
+                            <div class="P1et P1et21" style="grid-area:P1eB1;"></div>
+                            <div class="P1et P1et22" style="grid-area:P1eB2;"></div>
+                            <div class="P1et P1et23" style="grid-area:P1eB3;"></div>
+                            <div class="P1et P1et24" style="grid-area:P1eB4"></div>
+                            <div class="P1et P1et31" style="grid-area:P1eC1;"></div>
+                            <div class="P1et P1et32" style="grid-area:P1eC2"></div>
+                            <div class="P1et P1et33" style="grid-area:P1eC3;"></div>
+                            <div class="P1et P1et34" style="grid-area:P1eC4;"></div>
+                            <div class="P1et P1et41" style="grid-area:P1eD1;"></div>
+                            <div class="P1et P1et42" style="grid-area:P1eD2;"></div>
+                            <div class="P1et P1et43" style="grid-area:P1eD3;"></div>
+                            <div class="P1et P1ettr" style="grid-area:P1eD4;"></div>
+                        </div>
+                    </div>
+                    <!--reference-->
+                    <div class="egoalM">
+                        <div class='mes mes11'></div>
+                        <div class='mes mes12'></div>
+                        <div class='mes mes21'></div>
+                        <div class='mes mes22'></div>
+                    </div>
+                    <!--player2 puzzle-->
+                    <div class="eP2puzz">
+                        <div class="P2escores">
+                            <div class="P2escore">
+                                <h1>Moves</h1>
+                                <p class='P2emoves'>0</p>
+                            </div>
+                            <div class="P2etime">
+                                <h1>Time left</h1>
+                                <p class="P2eclock">1:00</p>
+                            </div>
+                        </div>
+                        <div class="P2epuzzle">
+                            <div class="P2esol_back" style="grid-area:P2eB2/P2eB2/P2eC3/P2eC3;"></div>
+                            <div class="P2et P2et11" style="grid-area:P2eA1;"></div>
+                            <div class="P2et P2et12" style="grid-area:P2eA2;"></div>
+                            <div class="P2et P2et13" style="grid-area:P2eA3;"></div>
+                            <div class="P2et P2et14" style="grid-area:P2eA4;"></div>
+                            <div class="P2et P2et21" style="grid-area:P2eB1;"></div>
+                            <div class="P2et P2et22" style="grid-area:P2eB2;"></div>
+                            <div class="P2et P2et23" style="grid-area:P2eB3;"></div>
+                            <div class="P2et P2et24" style="grid-area:P2eB4"></div>
+                            <div class="P2et P2et31" style="grid-area:P2eC1;"></div>
+                            <div class="P2et P2et32" style="grid-area:P2eC2"></div>
+                            <div class="P2et P2et33" style="grid-area:P2eC3;"></div>
+                            <div class="P2et P2et34" style="grid-area:P2eC4;"></div>
+                            <div class="P2et P2et41" style="grid-area:P2eD1;"></div>
+                            <div class="P2et P2et42" style="grid-area:P2eD2;"></div>
+                            <div class="P2et P2et43" style="grid-area:P2eD3;"></div>
+                            <div class="P2et P2ettr" style="grid-area:P2eD4;"></div>
+                        </div>
+                    </div>
+
+                </div>
+                    <!--Buttons-->
+                    
+                <div class="egame-startM" >
+                    <button class="estartM"  disabled>Start Game</button>
+                    <button class="emodesM">Modes</button>
+                </div>
+                
+            </div>
+            <!--multiplayer medium mode-->
+            <div class="mediumM">
+                <header>Colour Tiles</header>
+                
+                <div class="mmatchM">
+                    
+                    <!--puzzle-->
+                    <!--player1 puzzle-->
+                    <div class="mP1puzz">
+                        <div class="P1mscores">
+                            <div class="P1mscore">
+                                <h1>Moves</h1>
+                                <p class='P1mmoves'>0</p>
+                            </div>
+                            <div class="P1mtime">
+                                <h1>Time left</h1>
+                                <p class="P1mclock">2:00</p>
+                            </div>
+                        </div>
+                        <div class="P1mpuzzle">
+                            <div class="P1msol_back" style="grid-area:P1mB2/P1mB2/P1mD4/P1mD4;"></div>
+                <div class="P1mt P1mt11" style="grid-area:P1mA1;"></div>
+                <div class="P1mt P1mt12" style="grid-area:P1mA2;"></div>
+                <div class="P1mt P1mt13" style="grid-area:P1mA3;"></div>
+                <div class="P1mt P1mt14" style="grid-area:P1mA4;"></div>
+                <div class="P1mt P1mt15" style="grid-area:P1mA5;"></div>
+                <div class="P1mt P1mt21" style="grid-area:P1mB1;"></div>
+                <div class="P1mt P1mt22" style="grid-area:P1mB2;"></div>
+                <div class="P1mt P1mt23" style="grid-area:P1mB3"></div>
+                <div class="P1mt P1mt24" style="grid-area:P1mB4;"></div>
+                <div class="P1mt P1mt25" style="grid-area:P1mB5"></div>
+                <div class="P1mt P1mt31" style="grid-area:P1mC1;"></div>
+                <div class="P1mt P1mt32" style="grid-area:P1mC2;"></div>
+                <div class="P1mt P1mt33" style="grid-area:P1mC3;"></div>
+                <div class="P1mt P1mt34" style="grid-area:P1mC4;"></div>
+                <div class="P1mt P1mt35" style="grid-area:P1mC5;"></div>
+                <div class="P1mt P1mt41" style="grid-area:P1mD1;"></div>
+                <div class="P1mt P1mt42" style="grid-area:P1mD2;"></div>
+                <div class="P1mt P1mt43" style="grid-area:P1mD3;"></div>
+                <div class="P1mt P1mt44" style="grid-area:P1mD4;"></div>
+                <div class="P1mt P1mt45" style="grid-area:P1mD5;"></div>
+                <div class="P1mt P1mt51" style="grid-area:P1mE1;"></div>
+                <div class="P1mt P1mt52" style="grid-area:P1mE2;"></div>
+                <div class="P1mt P1mt53" style="grid-area:P1mE3;"></div>
+                <div class="P1mt P1mt54" style="grid-area:P1mE4;"></div>
+                <div class="P1mt P1mttr" style="grid-area:P1mE5;"></div>
+                        </div>
+                    </div>
+                    <!--reference-->
+                    <div class="mgoalM">
+                        <div class='mms mms11'></div>
+                        <div class='mms mms12'></div>
+                    <div class='mms mms13'></div>
+                    <div class='mms mms21'></div>
+                    <div class='mms mms22'></div>
+                    <div class='mms mms23'></div>
+                    <div class='mms mms31'></div>
+                    <div class='mms mms32'></div>
+                    <div class='mms mms33'></div>
+                    </div>
+                    <!--player2 puzzle-->
+                    <div class="mP2puzz">
+                        <div class="P2mscores">
+                            <div class="P2mscore">
+                                <h1>Moves</h1>
+                                <p class='P2mmoves'>0</p>
+                            </div>
+                            <div class="P2mtime">
+                                <h1>Time left</h1>
+                                <p class="P2mclock">2:00</p>
+                            </div>
+                        </div>
+                        <div class="P2mpuzzle">
+                            <div class="P2msol_back" style="grid-area:P2mB2/P2mB2/P2mD4/P2mD4;"></div>
+                <div class="P2mt P2mt11" style="grid-area:P2mA1;"></div>
+                <div class="P2mt P2mt12" style="grid-area:P2mA2;"></div>
+                <div class="P2mt P2mt13" style="grid-area:P2mA3;"></div>
+                <div class="P2mt P2mt14" style="grid-area:P2mA4;"></div>
+                <div class="P2mt P2mt15" style="grid-area:P2mA5;"></div>
+                <div class="P2mt P2mt21" style="grid-area:P2mB1;"></div>
+                <div class="P2mt P2mt22" style="grid-area:P2mB2;"></div>
+                <div class="P2mt P2mt23" style="grid-area:P2mB3"></div>
+                <div class="P2mt P2mt24" style="grid-area:P2mB4;"></div>
+                <div class="P2mt P2mt25" style="grid-area:P2mB5"></div>
+                <div class="P2mt P2mt31" style="grid-area:P2mC1;"></div>
+                <div class="P2mt P2mt32" style="grid-area:P2mC2;"></div>
+                <div class="P2mt P2mt33" style="grid-area:P2mC3;"></div>
+                <div class="P2mt P2mt34" style="grid-area:P2mC4;"></div>
+                <div class="P2mt P2mt35" style="grid-area:P2mC5;"></div>
+                <div class="P2mt P2mt41" style="grid-area:P2mD1;"></div>
+                <div class="P2mt P2mt42" style="grid-area:P2mD2;"></div>
+                <div class="P2mt P2mt43" style="grid-area:P2mD3;"></div>
+                <div class="P2mt P2mt44" style="grid-area:P2mD4;"></div>
+                <div class="P2mt P2mt45" style="grid-area:P2mD5;"></div>
+                <div class="P2mt P2mt51" style="grid-area:P2mE1;"></div>
+                <div class="P2mt P2mt52" style="grid-area:P2mE2;"></div>
+                <div class="P2mt P2mt53" style="grid-area:P2mE3;"></div>
+                <div class="P2mt P2mt54" style="grid-area:P2mE4;"></div>
+                <div class="P2mt P2mttr" style="grid-area:P2mE5;"></div>
+                    </div>
+                     </div>
+                </div>
+                    <!--Buttons-->
+                    
+                <div class="mgame-startM" >
+                    <button class="mstartM" disabled>Start Game</button>
+                    <button class="mmodesM">Modes</button>
+                </div>
+                
+            </div>
+            <!--multiplayer hard mode-->
+            <div class="hardM">
+                <header>Colour Tiles</header>
+                
+                <div class="hmatchM">
+                    
+                    <!--puzzle-->
+                    <!--player1 puzzle-->
+                    <div class="hP1puzz">
+                        <div class="P1hscores">
+                            <div class="P1hscore">
+                                <h1>Moves</h1>
+                                <p class='P1hmoves'>0</p>
+                            </div>
+                            <div class="P1htime">
+                                <h1>Time left</h1>
+                                <p class="P1hclock">4:00</p>
+                            </div>
+                        </div>
+                        <div class="P1hpuzzle">
+                            <div class="P1hsol_back" style="grid-area:P1hB2/P1hB2/P1hE5/P1hE5;"></div>
+                <div class="P1ht P1ht11" style="grid-area:P1hA1;"></div>
+                <div class="P1ht P1ht12" style="grid-area:P1hA2;"></div>
+                <div class="P1ht P1ht12" style="grid-area:P1hA2;"></div>
+                <div class="P1ht P1ht13" style="grid-area:P1hA3;"></div>
+                <div class="P1ht P1ht14" style="grid-area:P1hA4;"></div>
+                <div class="P1ht P1ht15" style="grid-area:P1hA5;"></div>
+                <div class="P1ht P1ht16" style="grid-area:P1hA6;"></div>
+                <div class="P1ht P1ht21" style="grid-area:P1hB1;"></div>
+                <div class="P1ht P1ht22" style="grid-area:P1hB2;"></div>
+                <div class="P1ht P1ht23" style="grid-area:P1hB3;"></div>
+                <div class="P1ht P1ht24" style="grid-area:P1hB4;"></div>
+                <div class="P1ht P1ht25" style="grid-area:P1hB5;"></div>
+                <div class="P1ht P1ht26" style="grid-area:P1hB6;"></div>
+                <div class="P1ht P1ht31" style="grid-area:P1hC1;"></div>
+                <div class="P1ht P1ht32" style="grid-area:P1hC2;"></div>
+                <div class="P1ht P1ht33" style="grid-area:P1hC3;"></div>
+                <div class="P1ht P1ht34" style="grid-area:P1hC4;"></div>
+                <div class="P1ht P1ht35" style="grid-area:P1hC5;"></div>
+                <div class="P1ht P1ht36" style="grid-area:P1hC6;"></div>
+                <div class="P1ht P1ht41" style="grid-area:P1hD1;"></div>
+                <div class="P1ht P1ht42" style="grid-area:P1hD2;"></div>
+                <div class="P1ht P1ht43" style="grid-area:P1hD3;"></div>
+                <div class="P1ht P1ht44" style="grid-area:P1hD4;"></div>
+                <div class="P1ht P1ht45" style="grid-area:P1hD5;"></div>
+                <div class="P1ht P1ht46" style="grid-area:P1hD6;"></div>
+                <div class="P1ht P1ht51" style="grid-area:P1hE1;"></div>
+                <div class="P1ht P1ht52" style="grid-area:P1hE2;"></div>
+                <div class="P1ht P1ht53" style="grid-area:P1hE3;"></div>
+                <div class="P1ht P1ht54" style="grid-area:P1hE4;"></div>
+                <div class="P1ht P1ht55" style="grid-area:P1hE5;"></div>
+                <div class="P1ht P1ht56" style="grid-area:P1hE6;"></div>
+                <div class="P1ht P1ht61" style="grid-area:P1hF1;"></div>
+                <div class="P1ht P1ht62" style="grid-area:P1hF2;"></div>
+                <div class="P1ht P1ht63" style="grid-area:P1hF3;"></div>
+                <div class="P1ht P1ht64" style="grid-area:P1hF4;"></div>
+                <div class="P1ht P1ht65" style="grid-area:P1hF5;"></div>
+                <div class="P1ht P1httr" style="grid-area:P1hF6;"></div>
+                    </div>
+                    </div>
+                    <!--reference-->
+                    <div class="hgoalM">
+                        <div class='mhs mhs11'></div>
+                    <div class='mhs mhs12'></div>
+                    <div class='mhs mhs13'></div>
+                    <div class='mhs mhs14'></div>
+                    <div class='mhs mhs21'></div>
+                    <div class='mhs mhs22'></div>
+                    <div class='mhs mhs23'></div>
+                    <div class='mhs mhs24'></div>
+                    <div class='mhs mhs31'></div>
+                    <div class='mhs mhs32'></div>
+                    <div class='mhs mhs33'></div>
+                    <div class='mhs mhs34'></div>
+                    <div class='mhs mhs41'></div>
+                    <div class='mhs mhs42'></div>
+                    <div class='mhs mhs43'></div>
+                    <div class='mhs mhs44'></div>
+                    </div>
+                    <!--player2 puzzle-->
+                    <div class="hP2puzz">
+                        <div class="P2hscores">
+                            <div class="P2hscore">
+                                <h1>Moves</h1>
+                                <p class='P2hmoves'>0</p>
+                            </div>
+                            <div class="P2htime">
+                                <h1>Time left</h1>
+                                <p class="P2hclock">4:00</p>
+                            </div>
+                        </div>
+                        <div class="P2hpuzzle">
+                            <div class="P2hsol_back" style="grid-area:P2hB2/P2hB2/P2hE5/P2hE5;"></div>
+                <div class="P2ht P2ht11" style="grid-area:P2hA1;"></div>
+                <div class="P2ht P2ht12" style="grid-area:P2hA2;"></div>
+                <div class="P2ht P2ht13" style="grid-area:P2hA3;"></div>
+                <div class="P2ht P2ht14" style="grid-area:P2hA4;"></div>
+                <div class="P2ht P2ht15" style="grid-area:P2hA5;"></div>
+                <div class="P2ht P2ht16" style="grid-area:P2hA6;"></div>
+                <div class="P2ht P2ht21" style="grid-area:P2hB1;"></div>
+                <div class="P2ht P2ht22" style="grid-area:P2hB2;"></div>
+                <div class="P2ht P2ht23" style="grid-area:P2hB3;"></div>
+                <div class="P2ht P2ht24" style="grid-area:P2hB4;"></div>
+                <div class="P2ht P2ht25" style="grid-area:P2hB5;"></div>
+                <div class="P2ht P2ht26" style="grid-area:P2hB6;"></div>
+                <div class="P2ht P2ht31" style="grid-area:P2hC1;"></div>
+                <div class="P2ht P2ht32" style="grid-area:P2hC2;"></div>
+                <div class="P2ht P2ht33" style="grid-area:P2hC3;"></div>
+                <div class="P2ht P2ht34" style="grid-area:P2hC4;"></div>
+                <div class="P2ht P2ht35" style="grid-area:P2hC5;"></div>
+                <div class="P2ht P2ht36" style="grid-area:P2hC6;"></div>
+                <div class="P2ht P2ht41" style="grid-area:P2hD1;"></div>
+                <div class="P2ht P2ht42" style="grid-area:P2hD2;"></div>
+                <div class="P2ht P2ht43" style="grid-area:P2hD3;"></div>
+                <div class="P2ht P2ht44" style="grid-area:P2hD4;"></div>
+                <div class="P2ht P2ht45" style="grid-area:P2hD5;"></div>
+                <div class="P2ht P2ht46" style="grid-area:P2hD6;"></div>
+                <div class="P2ht P2ht51" style="grid-area:P2hE1;"></div>
+                <div class="P2ht P2ht52" style="grid-area:P2hE2;"></div>
+                <div class="P2ht P2ht53" style="grid-area:P2hE3;"></div>
+                <div class="P2ht P2ht54" style="grid-area:P2hE4;"></div>
+                <div class="P2ht P2ht55" style="grid-area:P2hE5;"></div>
+                <div class="P2ht P2ht56" style="grid-area:P2hE6;"></div>
+                <div class="P2ht P2ht61" style="grid-area:P2hF1;"></div>
+                <div class="P2ht P2ht62" style="grid-area:P2hF2;"></div>
+                <div class="P2ht P2ht63" style="grid-area:P2hF3;"></div>
+                <div class="P2ht P2ht64" style="grid-area:P2hF4;"></div>
+                <div class="P2ht P2ht65" style="grid-area:P2hF5;"></div>
+                <div class="P2ht P2httr" style="grid-area:P2hF6;"></div>
+                     </div>
+                </div>
+                </div>
+                    <!--Buttons-->
+                    
+                <div class="hgame-startM" >
+                    <button class="hstartM" disabled>Start Game</button>
+                    <button class="hmodesM">Modes</button>
+                </div>
+                
+            </div>
+        
+        <!--Single player game-->
+        <div class="intros">
             
             <header>Colour Tiles</header>
-            
+            <p style="position: relative;top:-50px;">Single player mode</p>
             <div class='name'>
                 <form>
                     <label for="name" id="enterName">Enter your name:</label>
@@ -24,6 +418,7 @@
                 <button id="easy">Easy mode</button>
                 <button id="medium">Medium mode</button>
                 <button id="hard">Hard mode</button>
+                <button id="splayerMode">Player mode</button>
             </div>
             <div class="highScore">
                 <h2>Best Players</h2>
@@ -249,5 +644,8 @@
     <script src="app1.js"></script>
     <script src="app2.js"></script>
     <script src="app3.js"></script>
+    <script src="mapp1.js"></script>
+    <script src="mapp2.js"></script>
+    <script src="mapp3.js"></script>
 </body>
 </html>

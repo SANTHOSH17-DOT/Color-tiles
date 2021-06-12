@@ -1,3 +1,20 @@
+//player mode page swap
+const sPlayerBtn = document.querySelector('#sPlayer');
+sPlayerBtn.addEventListener('click',()=>{
+    let introsPage = document.querySelector('.intros');
+    let gameChoice = document.querySelector('.gameChoice');
+    introsPage.style.display = 'flex';
+    gameChoice.style.display = 'none';
+});
+const playerMode = document.querySelector('#splayerMode');
+playerMode.addEventListener('click',()=>{
+    let introsPage = document.querySelector('.intros');
+    let gameChoice = document.querySelector('.gameChoice');
+    introsPage.style.display = 'none';
+    gameChoice.style.display = 'flex';
+})
+
+
 const easyBtn = document.querySelector('#easy');
 var tileSound = new sound("tilesound.wav");
 var easyopen = new sound("easyopen.wav");
@@ -50,7 +67,7 @@ const erandom_puzzle=()=>{
         }
 }
 easyBtn.addEventListener('click',function(){
-    const introPage = document.querySelector('.intro');
+    const introPage = document.querySelector('.intros');
     const easyPage = document.querySelector('.easy');
 
     introPage.style.display = 'none';
@@ -129,7 +146,8 @@ easyBtn.addEventListener('click',function(){
         
         ets.map(tile=>{
             const y = tile.style.gridArea;
-            
+            console.log(y);
+            // the grid area repeats four times.
             if(eactiveTiles[k.slice(0,3)].includes(y.slice(0,3))==false){
             
                 tile.style.pointerEvents = 'none';
@@ -150,6 +168,8 @@ easyBtn.addEventListener('click',function(){
             //shifting position
             t.style.gridArea = transTileArea;
             ettr.style.gridArea= tileArea;
+            console.log(t.style.gridArea);
+            console.log(ettr.style.gridArea);
             eunlock(ettr.style.gridArea);
             
             tileSound.play();
@@ -221,7 +241,7 @@ const emode = document.querySelector('.emodes');
 
 
 emode.addEventListener('click',function(){
-    const introPage = document.querySelector('.intro');
+    const introPage = document.querySelector('.intros');
     const easyPage = document.querySelector('.easy');
 
     var emoves = document.querySelector('.emoves');

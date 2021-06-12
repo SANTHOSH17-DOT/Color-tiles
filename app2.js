@@ -49,7 +49,7 @@ const mrandom_puzzle=()=>{
         }
 }
 medBtn.addEventListener('click',function(){
-    const introPage = document.querySelector('.intro');
+    const introPage = document.querySelector('.intros');
     const medPage = document.querySelector('.medium');
 
     introPage.style.display = 'none';
@@ -237,7 +237,7 @@ const mts = Array.from(document.querySelectorAll('.mt'));
     
 const mmode = document.querySelector('.mmodes');
 mmode.addEventListener('click',function(){
-    const introPage = document.querySelector('.intro');
+    const introPage = document.querySelector('.intros');
     const medPage = document.querySelector('.medium');
 
     var mmoves = document.querySelector('.mmoves');

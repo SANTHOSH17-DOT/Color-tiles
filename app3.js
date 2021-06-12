@@ -49,7 +49,7 @@ const hrandom_puzzle=()=>{
         }
 }
 hardBtn.addEventListener('click',function(){
-    const introPage = document.querySelector('.intro');
+    const introPage = document.querySelector('.intros');
     const hardPage = document.querySelector('.hard');
 
     introPage.style.display = 'none';
@@ -269,7 +269,7 @@ const hts = Array.from(document.querySelectorAll('.ht'));
     document.querySelector('#hardS').innerHTML = localStorage.hmoves;
 const hmode = document.querySelector('.hmodes');
 hmode.addEventListener('click',function(){
-    const introPage = document.querySelector('.intro');
+    const introPage = document.querySelector('.intros');
     const hardPage = document.querySelector('.hard');
 
     var hmoves = document.querySelector('.hmoves');
