@@ -233,7 +233,7 @@ easyBtn.addEventListener('click',function(){
     }
     document.querySelector('#easyP').innerHTML = localStorage.ename;
     document.querySelector('#easyS').innerHTML = localStorage.emoves;
-
+    
 
 
 
@@ -241,6 +241,7 @@ const emode = document.querySelector('.emodes');
 
 
 emode.addEventListener('click',function(){
+    
     const introPage = document.querySelector('.intros');
     const easyPage = document.querySelector('.easy');
 

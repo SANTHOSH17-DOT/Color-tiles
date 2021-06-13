@@ -13,7 +13,7 @@
     <section class="game">
         <!--Choosing player mode-->
         <div class="gameChoice">
-            <header>Colour Tiles</header>
+            <header style="position:relative; top:-75px;">Colour Tiles</header>
             <div class="multiSingle">
                 <button id="sPlayer">Single player</button>
                 <button id="mPlayer">Multiplayer </button>
@@ -26,7 +26,7 @@
             <div class="nameM">
                 <form>
                     <label for='name1' id='enterName1'>Enter player1 name:</label>
-                    <input type="text" id="name1" name="userName1">
+                    <input type="text" id="name1" name="userName1" onkeypress="(event)=>{return false;}">
                     <br/>
                     <br/>
                     <label for='name2' id='enterName2'>Enter player2 name:</label>
@@ -41,7 +41,7 @@
             </div>
             <div class="highScoreM">
                 <h2>Best Players</h2>
-                <p>Enter your name to get into leaderboard</p>
+                <p style="color:white;">Enter your names to get into leaderboard</p>
                 <div class="playerListM">
                 <div>
                 <table style='color:rgb(48, 120, 230);'>
@@ -66,7 +66,7 @@
         </div>
             <!--multiplayer easy mode-->
             <div class="easyM" >
-                <header>Colour Tiles</header>
+                <header><h1>Colour Tiles</h1><p style="font-weight:400;font-size: 16px;">Player with least moves wins</p></header>
                 
                 <div class="ematchM">
                     
@@ -78,10 +78,7 @@
                                 <h1>Moves</h1>
                                 <p class='P1emoves'>0</p>
                             </div>
-                            <div class="P1etime">
-                                <h1>Time left</h1>
-                                <p class="P1eclock">1:00</p>
-                            </div>
+                            
                         </div>
                         <div class="P1epuzzle">
                             <div class="P1esol_back" style="grid-area:P1eB2/P1eB2/P1eC3/P1eC3;"></div>
@@ -105,6 +102,7 @@
                     </div>
                     <!--reference-->
                     <div class="egoalM">
+                        <div class='ewinBoard'></div>
                         <div class='mes mes11'></div>
                         <div class='mes mes12'></div>
                         <div class='mes mes21'></div>
@@ -117,10 +115,7 @@
                                 <h1>Moves</h1>
                                 <p class='P2emoves'>0</p>
                             </div>
-                            <div class="P2etime">
-                                <h1>Time left</h1>
-                                <p class="P2eclock">1:00</p>
-                            </div>
+                            
                         </div>
                         <div class="P2epuzzle">
                             <div class="P2esol_back" style="grid-area:P2eB2/P2eB2/P2eC3/P2eC3;"></div>
@@ -166,10 +161,7 @@
                                 <h1>Moves</h1>
                                 <p class='P1mmoves'>0</p>
                             </div>
-                            <div class="P1mtime">
-                                <h1>Time left</h1>
-                                <p class="P1mclock">2:00</p>
-                            </div>
+                            
                         </div>
                         <div class="P1mpuzzle">
                             <div class="P1msol_back" style="grid-area:P1mB2/P1mB2/P1mD4/P1mD4;"></div>
@@ -202,6 +194,7 @@
                     </div>
                     <!--reference-->
                     <div class="mgoalM">
+                        <div class='mwinBoard'></div>
                         <div class='mms mms11'></div>
                         <div class='mms mms12'></div>
                     <div class='mms mms13'></div>
@@ -219,10 +212,7 @@
                                 <h1>Moves</h1>
                                 <p class='P2mmoves'>0</p>
                             </div>
-                            <div class="P2mtime">
-                                <h1>Time left</h1>
-                                <p class="P2mclock">2:00</p>
-                            </div>
+                            
                         </div>
                         <div class="P2mpuzzle">
                             <div class="P2msol_back" style="grid-area:P2mB2/P2mB2/P2mD4/P2mD4;"></div>
@@ -276,15 +266,12 @@
                                 <h1>Moves</h1>
                                 <p class='P1hmoves'>0</p>
                             </div>
-                            <div class="P1htime">
-                                <h1>Time left</h1>
-                                <p class="P1hclock">4:00</p>
-                            </div>
+                            
                         </div>
                         <div class="P1hpuzzle">
                             <div class="P1hsol_back" style="grid-area:P1hB2/P1hB2/P1hE5/P1hE5;"></div>
                 <div class="P1ht P1ht11" style="grid-area:P1hA1;"></div>
-                <div class="P1ht P1ht12" style="grid-area:P1hA2;"></div>
+                
                 <div class="P1ht P1ht12" style="grid-area:P1hA2;"></div>
                 <div class="P1ht P1ht13" style="grid-area:P1hA3;"></div>
                 <div class="P1ht P1ht14" style="grid-area:P1hA4;"></div>
@@ -324,6 +311,7 @@
                     </div>
                     <!--reference-->
                     <div class="hgoalM">
+                        <div class='hwinBoard'></div>
                         <div class='mhs mhs11'></div>
                     <div class='mhs mhs12'></div>
                     <div class='mhs mhs13'></div>
@@ -348,10 +336,7 @@
                                 <h1>Moves</h1>
                                 <p class='P2hmoves'>0</p>
                             </div>
-                            <div class="P2htime">
-                                <h1>Time left</h1>
-                                <p class="P2hclock">4:00</p>
-                            </div>
+                            
                         </div>
                         <div class="P2hpuzzle">
                             <div class="P2hsol_back" style="grid-area:P2hB2/P2hB2/P2hE5/P2hE5;"></div>
