@@ -784,7 +784,7 @@ const P2hts = Array.from(document.querySelectorAll('.P2ht'));
                     hgoalDis.style.display='flex';
                     hgoalDis.innerHTML= '<h1>'+hplayer1Name+' wins 🔥'+'</h1>'+'<p style="color:red;">'+'moves: '+htot1moves+'</p>';
                 }
-                else if(mtot1moves>mtot2moves && mplayer2Name!=""&& mplayer1Name!=""){
+                else if(htot1moves>htot2moves && hplayer2Name!=""&& hplayer1Name!=""){
                     let score = localStorage.getItem('Mhscore');
                     if(!score || htot1moves<parseInt(score)){
                         localStorage.setItem('Mhname',hplayer2Name);
