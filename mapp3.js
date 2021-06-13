@@ -811,7 +811,8 @@ const P2hts = Array.from(document.querySelectorAll('.P2ht'));
 
 
 hmodeM.addEventListener('click',function(){
-    
+    mwin = 0;
+    mstopMotion = 0;
     document.querySelector('#name1').value = '';
     document.querySelector('#name2').value = '';
     

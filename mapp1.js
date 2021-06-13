@@ -567,7 +567,7 @@ const P2ets = Array.from(document.querySelectorAll('.P2et'));
             //have a c'mon variable to check the completion of the games
             //and leaderboard stuffs
             const ewinnerCheck =()=>{
-            if(ewin == 2){
+            if(ewin==2){
                 applause.play();
                 mes = Array.from(document.querySelectorAll('.mes'));
                 mes.map(t=>{
@@ -614,7 +614,8 @@ const P2ets = Array.from(document.querySelectorAll('.P2et'));
 
 
 emodeM.addEventListener('click',function(){
-    
+    ewin = 0;
+    estopMotion = 0;
     document.querySelector('#name1').value = '';
     document.querySelector('#name2').value = '';
     
