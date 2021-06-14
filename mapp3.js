@@ -677,7 +677,7 @@ const P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P1s[15].style.background == t55 
                 ){
                     //completion check
-                    mwin +=1;
+                    hwin +=1;
                     //freeze count of moves
                     //no further tile swap
                     htot1moves = P1hmoves.innerHTML;
@@ -811,8 +811,8 @@ const P2hts = Array.from(document.querySelectorAll('.P2ht'));
 
 
 hmodeM.addEventListener('click',function(){
-    mwin = 0;
-    mstopMotion = 0;
+    hwin = 0;
+    hstopMotion = 0;
     document.querySelector('#name1').value = '';
     document.querySelector('#name2').value = '';
     
