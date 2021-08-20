@@ -15,7 +15,6 @@ MplayerMode.addEventListener('click', () => {
     gameChoice.style.display = 'flex';
 });
 
-// give details of the keys to be used (pic)
 
 const easyBtnM = document.querySelector('#easyM');
 var tileSound = new sound("tilesound.wav");
@@ -60,7 +59,7 @@ const Merandom_puzzle = () => {
     eplayer1Name = document.querySelector('#name1').value;
     eplayer2Name = document.querySelector('#name2').value;
 
-    console.log(eplayer1Name);
+    //console.log(eplayer1Name);
     //Set of colours to be used
     var colors1 = ['red', 'red', 'red', 'blue', 'blue', 'blue', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green', 'brown', 'brown', 'brown'];
 
@@ -90,14 +89,18 @@ const Merandom_puzzle = () => {
     while (j <= 4) {
         var i = 1;
         while (i <= 4) {
-            let n = Math.floor(Math.random() * colors2.length);
-            const x1 = document.querySelector(`.P1et${j}${i}`);
-            const x2 = document.querySelector(`.P2et${j}${i}`);
-            x1.style.background = colors2[n];
-            x2.style.background = colors2[n];
-            x1.style.cursor = 'auto';
-            x2.style.cursor = 'auto';
-            colors2.splice(n, 1);
+            try {
+                let n = Math.floor(Math.random() * colors2.length);
+                const x1 = document.querySelector(`.P1et${j}${i}`);
+                const x2 = document.querySelector(`.P2et${j}${i}`);
+                x1.style.background = colors2[n];
+                x2.style.background = colors2[n];
+                x1.style.cursor = 'auto';
+                x2.style.cursor = 'auto';
+                colors2.splice(n, 1);
+            } catch {
+
+            }
             i++;
         }
         j++;
@@ -135,12 +138,12 @@ estartGameM.addEventListener('click', function() {
 var P1ettr = document.querySelector('.P1ettr');
 
 const emoveTilesP1 = (event) => {
-        console.log('hi');
-        /*console.log(keyEvent.key);*/
-        /*console.log(event);*/
+        //console.log('hi');
+        /*//console.log(keyEvent.key);*/
+        /*//console.log(event);*/
 
         let press = event.charCode; //to get the unicode value 
-        /*console.log(press);*/
+        /*//console.log(press);*/
         let transGA = P1ettr.style.gridArea;
         const forbidtileW = ['P1eD1', 'P1eD2', 'P1eD3', 'P1eD4'];
         const forbidtileD = ['P1eA1', 'P1eB1', 'P1eC1', 'P1eD1'];
@@ -298,12 +301,12 @@ const emoveTilesP1 = (event) => {
 
         }
     }
-    /*console.log(Event);*/
+    /*//console.log(Event);*/
     // check if it's applicable only to the game page
     //to avoid motion of tiles before entering the page
 
 document.addEventListener('keypress', () => {
-    console.log(estopMotion);
+    //console.log(estopMotion);
     if (estopMotion == 1) {
         emoveTilesP1(event);
     }
@@ -317,10 +320,10 @@ var P2ettr = document.querySelector('.P2ettr');
 const emoveTilesP2 = (event) => {
 
 
-        /*console.log(event);
+        /*//console.log(event);
          */
         let press = event.keyCode; //to get the unicode value 
-        /*console.log(press);*/
+        /*//console.log(press);*/
         let transGA = P2ettr.style.gridArea;
         const forbidtileu = ['P2eD1', 'P2eD2', 'P2eD3', 'P2eD4'];
         const forbidtiler = ['P2eA1', 'P2eB1', 'P2eC1', 'P2eD1'];
@@ -385,9 +388,9 @@ const emoveTilesP2 = (event) => {
                     P2ettr.style.gridArea = m;
                 });
             } else if (transGA[4] == '4') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3';
-                console.log(m);
+                //console.log(m);
                 let P2ets = Array.from(document.querySelectorAll('.P2et'));
                 P2ets.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -427,7 +430,7 @@ const emoveTilesP2 = (event) => {
                 });
             } else if (transGA[3] == 'D') {
                 let m = transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P2ets = Array.from(document.querySelectorAll('.P2et'));
                 P2ets.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -445,7 +448,7 @@ const emoveTilesP2 = (event) => {
             if (transGA[4] == '1') {
 
                 let m = transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2';
-                console.log(m);
+                //console.log(m);
                 //swaping tiles
                 let P2ets = Array.from(document.querySelectorAll('.P2et'));
                 P2ets.map(tile => {
@@ -478,9 +481,9 @@ const emoveTilesP2 = (event) => {
 
         }
     }
-    /*console.log(Event);*/
+    /*//console.log(Event);*/
 document.addEventListener('keydown', () => {
-    console.log(estopMotion);
+    //console.log(estopMotion);
     if (estopMotion == 1) {
         emoveTilesP2(event);
     }
@@ -534,7 +537,7 @@ const P2echeck = () => {
         //check it again
 
 
-        console.log('done');
+        //console.log('done');
         let P2ets = Array.from(document.querySelectorAll('.P2et'));
         let P2s = Array.from(document.querySelectorAll('.mes'));
         let t22;
@@ -577,10 +580,10 @@ const ewinnerCheck = () => {
         mes.map(t => {
             t.style.background = 'transparent';
         });
-        console.log(eplayer1Name);
-        console.log(eplayer2Name);
-        console.log(etot1moves);
-        console.log(etot2moves);
+        //console.log(eplayer1Name);
+        //console.log(eplayer2Name);
+        //console.log(etot1moves);
+        //console.log(etot2moves);
         if (etot1moves < etot2moves && eplayer1Name != "" && eplayer2Name != "") {
             let score = localStorage.getItem('Mescore');
             if (!score || etot2moves < parseInt(score)) {
@@ -607,8 +610,18 @@ const ewinnerCheck = () => {
         }
     }
 }
-document.querySelector('#easyPM').innerHTML = localStorage.Mename;
-document.querySelector('#easySM').innerHTML = localStorage.Mescore;
+if (localStorage.Mename != undefined) {
+
+    document.querySelector('#easyPM').innerHTML = localStorage.Mename;
+} else {
+    document.querySelector('#easyPM').innerHTML = '-'
+}
+if (localStorage.Mescore != undefined) {
+    document.querySelector('#easySM').innerHTML = localStorage.Mescore;
+} else {
+    document.querySelector('#easySM').innerHTML = '-'
+}
+
 const introPage = document.querySelector('.introm');
 const easyPage = document.querySelector('.easyM');
 

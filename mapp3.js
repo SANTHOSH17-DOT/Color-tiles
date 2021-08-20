@@ -35,15 +35,19 @@ const Mhrandom_puzzle = () => {
     while (k <= 4) {
         var l = 1;
         while (l <= 4) {
-            //random number which chooses the color from the colors1
-            let n = Math.floor(Math.random() * colors1.length);
+            try {
+                //random number which chooses the color from the colors1
+                let n = Math.floor(Math.random() * colors1.length);
 
-            const y = document.querySelector(`.mhs${k}${l}`);
-            //applying the background of individual tile
-            y.style.background = colors1[n];
+                const y = document.querySelector(`.mhs${k}${l}`);
+                //applying the background of individual tile
+                y.style.background = colors1[n];
 
-            //In general, splice(index,number of elements to be removed,addelement1,addelement2..)
-            colors1.splice(n, 1);
+                //In general, splice(index,number of elements to be removed,addelement1,addelement2..)
+                colors1.splice(n, 1);
+            } catch {
+
+            }
             l++;
         }
         k++;
@@ -99,10 +103,10 @@ hstartGameM.addEventListener('click', function() {
 var P1httr = document.querySelector('.P1httr');
 
 const hmoveTilesP1 = (event) => {
-        /*console.log(event);
+        /*//console.log(event);
          */
         let press = event.keyCode; //to get the unicode value 
-        /*console.log(press);*/
+        /*//console.log(press);*/
         let transGA = P1httr.style.gridArea;
         const forbidtileW = ['P1hF1', 'P1hF2', 'P1hF3', 'P1hF4', 'P1hF5', 'P1hF6'];
         const forbidtileD = ['P1hA1', 'P1hB1', 'P1hC1', 'P1hD1', 'P1hE1', 'P1hF1'];
@@ -185,9 +189,9 @@ const hmoveTilesP1 = (event) => {
                     P1httr.style.gridArea = m;
                 });
             } else if (transGA[4] == '4') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3';
-                console.log(m);
+                //console.log(m);
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -197,9 +201,9 @@ const hmoveTilesP1 = (event) => {
                     P1httr.style.gridArea = m;
                 });
             } else if (transGA[4] == '5') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4';
-                console.log(m);
+                //console.log(m);
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -209,9 +213,9 @@ const hmoveTilesP1 = (event) => {
                     P1httr.style.gridArea = m;
                 });
             } else if (transGA[4] == '6') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '5' + ' / ' + transGA.slice(0, 4) + '5' + ' / ' + transGA.slice(0, 4) + '5' + ' / ' + transGA.slice(0, 4) + '5';
-                console.log(m);
+                //console.log(m);
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -251,7 +255,7 @@ const hmoveTilesP1 = (event) => {
                 });
             } else if (transGA[3] == 'D') {
                 let m = transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -262,7 +266,7 @@ const hmoveTilesP1 = (event) => {
 
             } else if (transGA[3] == 'E') {
                 let m = transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -273,7 +277,7 @@ const hmoveTilesP1 = (event) => {
 
             } else if (transGA[3] == 'F') {
                 let m = transGA.slice(0, 3) + 'E' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'E' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'E' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'E' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -291,7 +295,7 @@ const hmoveTilesP1 = (event) => {
             if (transGA[4] == '1') {
 
                 let m = transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2';
-                console.log(m);
+                //console.log(m);
                 //swaping tiles
                 let P1hts = Array.from(document.querySelectorAll('.P1ht'));
                 P1hts.map(tile => {
@@ -342,12 +346,12 @@ const hmoveTilesP1 = (event) => {
 
         }
     }
-    /*console.log(Event);*/
+    /*//console.log(Event);*/
     // check if it's applicable only to the game page
     //to avoid motion of tiles before entering the page
 
 document.addEventListener('keypress', () => {
-    console.log(hstopMotion);
+    //console.log(hstopMotion);
     if (hstopMotion == 1) {
         hmoveTilesP1(event);
     }
@@ -361,10 +365,10 @@ var P2httr = document.querySelector('.P2httr');
 const hmoveTilesP2 = (event) => {
 
 
-        /*console.log(event);
+        /*//console.log(event);
          */
         let press = event.keyCode; //to get the unicode value 
-        /*console.log(press);*/
+        /*//console.log(press);*/
         let transGA = P2httr.style.gridArea;
         const forbidtileu = ['P2hF1', 'P2hF2', 'P2hF3', 'P2hF4', 'P2hF5', 'P2hF6'];
         const forbidtiler = ['P2hA1', 'P2hB1', 'P2hC1', 'P2hD1', 'P2hE1', 'P2hF1'];
@@ -447,9 +451,9 @@ const hmoveTilesP2 = (event) => {
                     P2httr.style.gridArea = m;
                 });
             } else if (transGA[4] == '4') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3';
-                console.log(m);
+                //console.log(m);
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -459,9 +463,9 @@ const hmoveTilesP2 = (event) => {
                     P2httr.style.gridArea = m;
                 });
             } else if (transGA[4] == '5') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4';
-                console.log(m);
+                //console.log(m);
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -471,9 +475,9 @@ const hmoveTilesP2 = (event) => {
                     P2httr.style.gridArea = m;
                 });
             } else if (transGA[4] == '6') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '5' + ' / ' + transGA.slice(0, 4) + '5' + ' / ' + transGA.slice(0, 4) + '5' + ' / ' + transGA.slice(0, 4) + '5';
-                console.log(m);
+                //console.log(m);
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -513,7 +517,7 @@ const hmoveTilesP2 = (event) => {
                 });
             } else if (transGA[3] == 'D') {
                 let m = transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -524,7 +528,7 @@ const hmoveTilesP2 = (event) => {
 
             } else if (transGA[3] == 'E') {
                 let m = transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -535,7 +539,7 @@ const hmoveTilesP2 = (event) => {
 
             } else if (transGA[3] == 'F') {
                 let m = transGA.slice(0, 3) + 'E' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'E' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'E' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'E' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -553,7 +557,7 @@ const hmoveTilesP2 = (event) => {
             if (transGA[4] == '1') {
 
                 let m = transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2';
-                console.log(m);
+                //console.log(m);
                 //swaping tiles
                 let P2hts = Array.from(document.querySelectorAll('.P2ht'));
                 P2hts.map(tile => {
@@ -604,9 +608,9 @@ const hmoveTilesP2 = (event) => {
 
         }
     }
-    /*console.log(Event);*/
+    /*//console.log(Event);*/
 document.addEventListener('keydown', () => {
-    console.log(hstopMotion);
+    //console.log(hstopMotion);
     if (hstopMotion == 1) {
         hmoveTilesP2(event);
     }
@@ -784,10 +788,10 @@ const hwinnerCheck = () => {
         mhs.map(t => {
             t.style.background = 'transparent';
         });
-        console.log(player1Name);
-        console.log(hplayer2Name);
-        console.log(htot1moves);
-        console.log(htot2moves);
+        //console.log(player1Name);
+        //console.log(hplayer2Name);
+        //console.log(htot1moves);
+        //console.log(htot2moves);
         if (htot1moves < htot2moves && hplayer1Name != "" && hplayer2Name != "") {
             let score = localStorage.getItem('Mhscore');
             if (!score || htot2moves < parseInt(score)) {
@@ -814,8 +818,18 @@ const hwinnerCheck = () => {
         }
     }
 }
-document.querySelector('#hardPM').innerHTML = localStorage.Mhname;
-document.querySelector('#hardSM').innerHTML = localStorage.Mhscore;
+if (localStorage.Mhname != undefined) {
+
+    document.querySelector('#hardPM').innerHTML = localStorage.Mhname;
+} else {
+    document.querySelector('#hardPM').innerHTML = '-'
+}
+if (localStorage.Mhscore != undefined) {
+    document.querySelector('#hardSM').innerHTML = localStorage.Mhscore;
+} else {
+    document.querySelector('#hardSM').innerHTML = '-'
+}
+
 const introPage2 = document.querySelector('.introm');
 const hardPage = document.querySelector('.hardM');
 

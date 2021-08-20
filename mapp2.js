@@ -98,12 +98,12 @@ mstartGameM.addEventListener('click', function() {
 var P1mttr = document.querySelector('.P1mttr');
 
 const mmoveTilesP1 = (event) => {
-        console.log('hi');
-        /*console.log(keyEvent.key);*/
-        /*console.log(event);*/
+        //console.log('hi');
+        /*//console.log(keyEvent.key);*/
+        /*//console.log(event);*/
 
         let press = event.charCode; //to get the unicode value 
-        /*console.log(press);*/
+        /*//console.log(press);*/
         let transGA = P1mttr.style.gridArea;
         const forbidtileW = ['P1mE1', 'P1mE2', 'P1mE3', 'P1mE4', 'P1mE5'];
         const forbidtileD = ['P1mA1', 'P1mB1', 'P1mC1', 'P1mD1', 'P1mE1'];
@@ -177,9 +177,9 @@ const mmoveTilesP1 = (event) => {
                     P1mttr.style.gridArea = m;
                 });
             } else if (transGA[4] == '4') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3';
-                console.log(m);
+                //console.log(m);
                 let P1mts = Array.from(document.querySelectorAll('.P1mt'));
                 P1mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -189,9 +189,9 @@ const mmoveTilesP1 = (event) => {
                     P1mttr.style.gridArea = m;
                 });
             } else if (transGA[4] == '5') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4';
-                console.log(m);
+                //console.log(m);
                 let P1mts = Array.from(document.querySelectorAll('.P1mt'));
                 P1mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -231,7 +231,7 @@ const mmoveTilesP1 = (event) => {
                 });
             } else if (transGA[3] == 'D') {
                 let m = transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P1mts = Array.from(document.querySelectorAll('.P1mt'));
                 P1mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -242,7 +242,7 @@ const mmoveTilesP1 = (event) => {
 
             } else if (transGA[3] == 'E') {
                 let m = transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P1mts = Array.from(document.querySelectorAll('.P1mt'));
                 P1mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -260,7 +260,7 @@ const mmoveTilesP1 = (event) => {
             if (transGA[4] == '1') {
 
                 let m = transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2';
-                console.log(m);
+                //console.log(m);
                 //swaping tiles
                 let P1mts = Array.from(document.querySelectorAll('.P1mt'));
                 P1mts.map(tile => {
@@ -302,12 +302,12 @@ const mmoveTilesP1 = (event) => {
 
         }
     }
-    /*console.log(Event);*/
+    /*//console.log(Event);*/
     // check if it's applicable only to the game page
     //to avoid motion of tiles before entering the page
 
 document.addEventListener('keypress', () => {
-    console.log(mstopMotion);
+    //console.log(mstopMotion);
     if (mstopMotion == 1) {
         mmoveTilesP1(event);
     }
@@ -321,10 +321,10 @@ var P2mttr = document.querySelector('.P2mttr');
 const mmoveTilesP2 = (event) => {
 
 
-        /*console.log(event);
+        /*//console.log(event);
          */
         let press = event.keyCode; //to get the unicode value 
-        /*console.log(press);*/
+        /*//console.log(press);*/
         let transGA = P2mttr.style.gridArea;
         const forbidtileu = ['P1mE1', 'P1mE2', 'P1mE3', 'P1mE4', 'P1mE5'];
         const forbidtiler = ['P1mA1', 'P1mB1', 'P1mC1', 'P1mD1', 'P1mE1'];
@@ -398,9 +398,9 @@ const mmoveTilesP2 = (event) => {
                     P2mttr.style.gridArea = m;
                 });
             } else if (transGA[4] == '4') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3' + ' / ' + transGA.slice(0, 4) + '3';
-                console.log(m);
+                //console.log(m);
                 let P2mts = Array.from(document.querySelectorAll('.P2mt'));
                 P2mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -410,9 +410,9 @@ const mmoveTilesP2 = (event) => {
                     P2mttr.style.gridArea = m;
                 });
             } else if (transGA[4] == '5') {
-                console.log(transGA);
+                //console.log(transGA);
                 let m = transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4' + ' / ' + transGA.slice(0, 4) + '4';
-                console.log(m);
+                //console.log(m);
                 let P2mts = Array.from(document.querySelectorAll('.P2mt'));
                 P2mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -452,7 +452,7 @@ const mmoveTilesP2 = (event) => {
                 });
             } else if (transGA[3] == 'D') {
                 let m = transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'C' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P2mts = Array.from(document.querySelectorAll('.P2mt'));
                 P2mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -463,7 +463,7 @@ const mmoveTilesP2 = (event) => {
 
             } else if (transGA[3] == 'E') {
                 let m = transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4] + ' / ' + transGA.slice(0, 3) + 'D' + transGA[4];
-                console.log(m);
+                //console.log(m);
                 let P2mts = Array.from(document.querySelectorAll('.P2mt'));
                 P2mts.map(tile => {
                     if (tile.style.gridArea == m) {
@@ -481,7 +481,7 @@ const mmoveTilesP2 = (event) => {
             if (transGA[4] == '1') {
 
                 let m = transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2' + ' / ' + transGA.slice(0, 4) + '2';
-                console.log(m);
+                //console.log(m);
                 //swaping tiles
                 let P2mts = Array.from(document.querySelectorAll('.P2mt'));
                 P2mts.map(tile => {
@@ -523,9 +523,9 @@ const mmoveTilesP2 = (event) => {
 
         }
     }
-    /*console.log(Event);*/
+    /*//console.log(Event);*/
 document.addEventListener('keydown', () => {
-    console.log(mstopMotion);
+    //console.log(mstopMotion);
     if (mstopMotion == 1) {
         mmoveTilesP2(event);
     }
@@ -661,10 +661,10 @@ const mwinnerCheck = () => {
         mms.map(t => {
             t.style.background = 'transparent';
         });
-        console.log(mplayer1Name);
-        console.log(mplayer2Name);
-        console.log(mtot1moves);
-        console.log(mtot2moves);
+        //console.log(mplayer1Name);
+        //console.log(mplayer2Name);
+        //console.log(mtot1moves);
+        //console.log(mtot2moves);
         if (mtot1moves < mtot2moves && mplayer1Name != "" && mplayer2Name != "") {
             let score = localStorage.getItem('Mmscore');
             if (!score || mtot2moves < parseInt(score)) {
@@ -691,8 +691,17 @@ const mwinnerCheck = () => {
         }
     }
 }
-document.querySelector('#medPM').innerHTML = localStorage.Mmname;
-document.querySelector('#medSM').innerHTML = localStorage.Mmscore;
+if (localStorage.Mmname != undefined) {
+
+    document.querySelector('#medPM').innerHTML = localStorage.Mmname;
+} else {
+    document.querySelector('#medPM').innerHTML = '-'
+}
+if (localStorage.Mmscore != undefined) {
+    document.querySelector('#medSM').innerHTML = localStorage.Mmscore;
+} else {
+    document.querySelector('#medSM').innerHTML = '-'
+}
 const introPage1 = document.querySelector('.introm');
 const medPage = document.querySelector('.mediumM');
 

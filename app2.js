@@ -38,11 +38,16 @@ const mrandom_puzzle = () => {
     while (j <= 5) {
         var i = 1;
         while (i <= 5) {
-            let n = Math.floor(Math.random() * colors2.length);
-            const x = document.querySelector(`.mt${j}${i}`);
-            x.style.background = colors2[n];
-            x.style.cursor = 'auto';
-            colors2.splice(n, 1);
+            try {
+                let n = Math.floor(Math.random() * colors2.length);
+                const x = document.querySelector(`.mt${j}${i}`);
+                x.style.background = colors2[n];
+                x.style.cursor = 'auto';
+                colors2.splice(n, 1);
+            } catch {
+
+            }
+
             i++;
         }
         j++;
@@ -64,7 +69,7 @@ var mtime = document.querySelector('.mclock');
 var mmoves = document.querySelector('.mmoves');
 mstartGame.addEventListener('click', function() {
     mstartGame.disabled = true;
-    console.log('thu');
+    //console.log('thu');
     mmoves.textContent = 0;
     clearInterval(interval);
     mtime.innerHTML = '2:00';
@@ -167,7 +172,7 @@ mts.map(t =>
     })
 );
 const mcheck = () => {
-    console.log('yes');
+    //console.log('yes');
     let s = Array.from(document.querySelectorAll('.ms'));
     let t22;
     let t23;
@@ -209,7 +214,7 @@ const mcheck = () => {
         s[7].style.background == t43 &&
         s[8].style.background == t44
     ) {
-        console.log('yes');
+        //console.log('yes');
         clearInterval(interval);
         let ts = Array.from(document.querySelectorAll('.mt'));
         let Congrats = document.querySelector('.msol_back');
@@ -226,8 +231,8 @@ const mcheck = () => {
         let score = localStorage.getItem('mmoves');
         let mmoves = document.querySelector('.mmoves');
         let mname = document.querySelector('#name');
-        console.log(mname.value);
-        console.log(mname.value != "");
+        //console.log(mname.value);
+        //console.log(mname.value != "");
         if (mname.value != "" && !score || mname.value != "" && parseInt(mmoves.textContent) < parseInt(score)) {
             localStorage.setItem('mname', mname.value);
             localStorage.setItem('mmoves', mmoves.textContent);
@@ -235,13 +240,22 @@ const mcheck = () => {
 
         }
 
-        console.log(localStorage);
+        //console.log(localStorage);
 
     }
 
 }
-document.querySelector('#medP').innerHTML = localStorage.mname;
-document.querySelector('#medS').innerHTML = localStorage.mmoves;
+if (localStorage.mname != undefined) {
+
+    document.querySelector('#medP').innerHTML = localStorage.mname;
+} else {
+    document.querySelector('#medP').innerHTML = '-'
+}
+if (localStorage.mmoves != undefined) {
+    document.querySelector('#medS').innerHTML = localStorage.mmoves;
+} else {
+    document.querySelector('#medS').innerHTML = '-'
+}
 
 const mmode = document.querySelector('.mmodes');
 mmode.addEventListener('click', function() {

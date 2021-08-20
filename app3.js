@@ -38,11 +38,16 @@ const hrandom_puzzle = () => {
     while (j <= 6) {
         var i = 1;
         while (i <= 6) {
-            let n = Math.floor(Math.random() * colors2.length);
-            const x = document.querySelector(`.ht${j}${i}`);
-            x.style.background = colors2[n];
-            x.style.cursor = 'auto';
-            colors2.splice(n, 1);
+            try {
+                let n = Math.floor(Math.random() * colors2.length);
+                const x = document.querySelector(`.ht${j}${i}`);
+                x.style.background = colors2[n];
+                x.style.cursor = 'auto';
+                colors2.splice(n, 1);
+            } catch {
+
+            }
+
             i++;
         }
         j++;
@@ -64,7 +69,7 @@ var htime = document.querySelector('.hclock');
 var hmoves = document.querySelector('.hmoves');
 hstartGame.addEventListener('click', function() {
     hstartGame.disabled = true;
-    console.log('thu');
+    //console.log('thu');
     hmoves.textContent = 0;
     clearInterval(interval);
     htime.innerHTML = '4:00';
@@ -144,7 +149,7 @@ var hactiveTiles = {
 const httr = document.querySelector('.httr');
 
 const hunlock = (k) => {
-    console.log(k);
+    //console.log(k);
     hts.map(tile => {
         const y = tile.style.gridArea;
 
@@ -179,7 +184,7 @@ hts.map(t =>
     })
 );
 const hcheck = () => {
-    console.log('yes');
+    //console.log('yes');
     let s = Array.from(document.querySelectorAll('.hs'));
     let t22;
     let t23;
@@ -249,7 +254,7 @@ const hcheck = () => {
         s[14].style.background == t54 &&
         s[15].style.background == t55
     ) {
-        console.log('yes');
+        //console.log('yes');
         clearInterval(interval);
         let ts = Array.from(document.querySelectorAll('.ht'));
         let Congrats = document.querySelector('.hsol_back');
@@ -266,8 +271,8 @@ const hcheck = () => {
         let score = localStorage.getItem('hmoves');
         let hmoves = document.querySelector('.hmoves');
         let hname = document.querySelector('#name');
-        console.log(hname.value);
-        console.log(hname.value != "");
+        //console.log(hname.value);
+        //console.log(hname.value != "");
         if (hname.value != "" && !score || hname.value != "" && parseInt(hmoves.textContent) < parseInt(score)) {
             localStorage.setItem('hname', hname.value);
             localStorage.setItem('hmoves', hmoves.textContent);
@@ -275,13 +280,22 @@ const hcheck = () => {
 
         }
 
-        console.log(localStorage);
+        //console.log(localStorage);
 
     }
 
 }
-document.querySelector('#hardP').innerHTML = localStorage.hname;
-document.querySelector('#hardS').innerHTML = localStorage.hmoves;
+if (localStorage.mhame != undefined) {
+
+    document.querySelector('#hardP').innerHTML = localStorage.hname;
+} else {
+    document.querySelector('#hardP').innerHTML = '-'
+}
+if (localStorage.hmoves != undefined) {
+    document.querySelector('#hardS').innerHTML = localStorage.hmoves;
+} else {
+    document.querySelector('#hardS').innerHTML = '-'
+}
 const hmode = document.querySelector('.hmodes');
 hmode.addEventListener('click', function() {
     const introPage = document.querySelector('.intros');
