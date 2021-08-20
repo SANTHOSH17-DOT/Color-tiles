@@ -4,7 +4,7 @@ const letsPlay = () => {
 
 
     const startGame = document.querySelector('.start');
-    const resetGame = document.querySelector('.stop');
+    startGame.disabled = false;
     var time = document.querySelector('.clock');
     var moves = document.querySelector('.moves');
 
@@ -64,21 +64,9 @@ const letsPlay = () => {
     //setInterval(repeats a function in fixed time) and assign it to a variable,
     // to stop it(clearInterval).
     //timer
-    resetGame.addEventListener('click', () => {
-        moves.textContent = 0;
-        time.innerHTML = '2:00';
-        clearInterval(interval);
 
-        //working on the cursor
-        let t = document.querySelectorAll('.t');
-        let i;
-        for (i = 0; i < t.length - 1; i++) {
-            t[i].style.cursor = 'auto';
-            t[i].style.pointerEvents = 'none';
-        }
-
-    });
     startGame.addEventListener('click', function() {
+        startGame.disabled = true;
         moves.textContent = 0;
         clearInterval(interval);
         time.innerHTML = '2:00';
@@ -233,7 +221,6 @@ const letsPlay = () => {
             s[7].style.background == t43 &&
             s[8].style.background == t44
         ) {
-            console.log('yes');
             clearInterval(interval);
             let ts = Array.from(document.querySelectorAll('.t'));
             let Congrats = document.querySelector('.sol_back');
